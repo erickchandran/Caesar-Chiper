@@ -1,0 +1,18 @@
+function rot13(str) {
+  let arrStr = str.split("");
+  let rot1 = "ABCDEFGHIJKLM"
+  let rot2 = "NOPQRSTUVWXYZ"
+  let result = [];
+  ////
+  for (let i=0; i<arrStr.length; i++){
+    if (rot1.includes(arrStr[i])){
+      result.push(rot2.charAt(rot1.indexOf(arrStr[i])));
+    } else if (rot2.includes(arrStr[i])){
+    result.push(rot1.charAt(rot2.indexOf(arrStr[i])))
+  } else {result.push(arrStr[i])}
+  } 
+  
+  return result.join("")
+}
+
+console.log(rot13("SERR PBQR PNZC"));
